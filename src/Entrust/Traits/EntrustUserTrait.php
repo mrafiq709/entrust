@@ -142,11 +142,11 @@ trait EntrustUserTrait
      *
      * @return bool
      */
-    public function cans($permission, $requireAll = false)
+    public function can($permission, $requireAll = false)
     {
         if (is_array($permission)) {
             foreach ($permission as $permName) {
-                $hasPerm = $this->cans($permName);
+                $hasPerm = $this->can($permName);
 
                 if ($hasPerm && !$requireAll) {
                     return true;
@@ -219,7 +219,7 @@ trait EntrustUserTrait
             $checkedRoles[$role] = $this->hasRole($role);
         }
         foreach ($permissions as $permission) {
-            $checkedPermissions[$permission] = $this->cans($permission);
+            $checkedPermissions[$permission] = $this->can($permission);
         }
 
         // If validate all and there is a false in either

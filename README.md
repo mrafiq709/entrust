@@ -3,7 +3,7 @@
 ### Installation
 
 run:
-`composer require mitchbred/entrust`
+`composer require mrafiq709/entrust:dev-master`
 
 Click [here](https://github.com/Zizaco/entrust/blob/master/README.md) for the full documentation.
 
